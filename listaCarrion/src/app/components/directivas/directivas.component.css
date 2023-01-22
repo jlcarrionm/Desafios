@@ -1,0 +1,34 @@
+.contenedor {
+    justify-content: center;
+    text-align: center;
+    border: 1px solid #000;
+    background: rgb(199, 196, 196);
+}
+
+.contenido {
+    /* centrado vertical */
+    position: absolute;
+    top: 10%;
+}
+
+.activo {
+    color: green;
+}
+
+.inactivo {
+    color: red;
+}
+
+.contenidoTabla {
+    width: 100%;
+    border: 1px solid #000;
+}
+
+th,
+td,
+h2 {
+    width: 25%;
+    text-align: left;
+    vertical-align: top;
+    border: 1px solid #000;
+}

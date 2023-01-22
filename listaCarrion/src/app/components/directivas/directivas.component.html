@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="with=device-width, initial-scale=1.0">
+    <title>Desafio-Interpolacion y Directivas</title>
+
+</head>
+
+<body>
+    <div class="container-fluid contenedor">
+        <div class="row">
+            <div class="col-12">
+                <h1>Desafios de Clase de interpolación y directivas</h1>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <table class="table table-responsive">
+                    <thead>
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Apellido</th>
+                            <th>Edad</th>
+                            <th>Estado</th>
+                            <th>Calificacion</th>
+                            <th>EstadoPromedio</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let t of listaEstudiantes" [ngClass]="t.estaActivo ? 'activo' : 'inactivo'">
+                            <th>{{ t.nombre }}</th>
+                            <th>{{ t.apellido }}</th>
+                            <th>{{ t.edad }}</th>
+                            <th>{{ t.estaActivo }}</th>
+                            <th>{{ t.calificacionPromedio }}</th>
+                            <th *ngIf="t.calificacionPromedio >= 70; else menor">Aprobado</th>
+                            <ng-template #menor>
+                                <th>Reprobado</th>
+                            </ng-template>
+
+
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
