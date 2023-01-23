@@ -32,11 +32,12 @@
                     </thead>
                     <tbody>
                         <tr *ngFor="let t of listaEstudiantes" [ngClass]="t.estaActivo ? 'activo' : 'inactivo'">
-                            <th>{{ t.nombre }}</th>
-                            <th>{{ t.apellido }}</th>
+                            <th>{{ t.nombre | uppercase }}</th>
+                            <th>{{ t.apellido | uppercase}}</th>
                             <th>{{ t.edad }}</th>
                             <th>{{ t.estaActivo }}</th>
                             <th>{{ t.calificacionPromedio }}</th>
+                            <!--   <th>{{ t.calificacionPromedio >= 70 ? 'Aprobado' : 'Reprobado'}}</th> -->
                             <th *ngIf="t.calificacionPromedio >= 70; else menor">Aprobado</th>
                             <ng-template #menor>
                                 <th>Reprobado</th>
